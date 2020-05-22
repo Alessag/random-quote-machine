@@ -11,6 +11,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faTumblr } from '@fortawesome/fontawesome-free-brands';
 
+const iconStyle = {
+    background: 'green',
+    color: 'white',
+    width: '25px',
+    height: '25px',
+    borderRadius: '0'
+};
+
 const QuoteMachine = ({ selectedQuote, assignNewQuoteIndex }) => (
     <Card>
         <CardContent>
@@ -19,17 +27,19 @@ const QuoteMachine = ({ selectedQuote, assignNewQuoteIndex }) => (
             </Typography>
         </CardContent>
         <CardActions>
-            <IconButton 
+            <IconButton
+                style={iconStyle} 
                 id="tweet-quote"
                 target="_blank" 
                 href={`https://twitter.com/intent/tweet?text=${selectedQuote.quote}`}>
-                <FontAwesomeIcon icon={ faTwitter} size="md"/>
+                <FontAwesomeIcon icon={ faTwitter} size="sm"/>
             </IconButton>
             <IconButton 
+                style={iconStyle} 
                 id="tumblr-quote"
                 target="_blank" 
                 href={`https://tumblr.com/intent/tumblr?text=${selectedQuote.quote}`}>
-                <FontAwesomeIcon icon={ faTumblr } size="md"/>
+                <FontAwesomeIcon icon={ faTumblr } size="sm"/>
             </IconButton>
             <Button 
                 id="new-quote"
