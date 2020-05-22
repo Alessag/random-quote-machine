@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -12,21 +12,35 @@ import { faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faTumblr } from '@fortawesome/fontawesome-free-brands';
 
 const iconStyle = {
-    background: 'green',
+    background: '#f50057',
     color: 'white',
     width: '25px',
     height: '25px',
     borderRadius: '0'
 };
 
+const quoteStyles = {
+    fontWeight: '400', 
+    fontSize: '1.7em'
+};
+
+const footerStyles = {
+    display: 'block'
+};
+
+const buttonStyle = {
+    float: 'right'
+};
+
 const QuoteMachine = ({ selectedQuote, assignNewQuoteIndex }) => (
     <Card>
         <CardContent>
-            <Typography id="text">
-                {selectedQuote.quote} - <span id="author">{selectedQuote.author}</span>
+            <Typography id="text" style={quoteStyles}>
+                {selectedQuote.quote}<br />
+                -<span id="author">{selectedQuote.author}</span>
             </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions style={footerStyles}>
             <IconButton
                 style={iconStyle} 
                 id="tweet-quote"
@@ -42,8 +56,11 @@ const QuoteMachine = ({ selectedQuote, assignNewQuoteIndex }) => (
                 <FontAwesomeIcon icon={ faTumblr } size="sm"/>
             </IconButton>
             <Button 
+                style={buttonStyle}
+                variant="contained"
+                color="secondary"
                 id="new-quote"
-                size="small" 
+                size="large" 
                 onClick={assignNewQuoteIndex}>Next Quote
             </Button>
         </CardActions>
