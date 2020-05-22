@@ -4,42 +4,72 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faTumblr } from '@fortawesome/fontawesome-free-brands';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const iconStyle = {
     background: '#f50057',
     color: 'white',
-    width: '25px',
-    height: '25px',
+    width: '20px',
+    height: '20px',
     borderRadius: '0'
 };
 
 const quoteStyles = {
-    fontWeight: '400', 
-    fontSize: '1.7em'
+    fontWeight: '300', 
+    fontSize: '1.5em'
 };
 
 const footerStyles = {
-    display: 'block'
+    display: 'block',
+    paddingRight: '0',
+    paddingTop: '25px'
 };
 
 const buttonStyle = {
     float: 'right'
 };
 
+const authorStyle = {
+    textAlign: 'right',
+    paddingTop: '20px', 
+    fontWeight: '300'
+}
+
+const cardStyle = {
+    padding: '40px 50px'
+};
+
+const quoteLeftStyle = {
+    marginRight: '5px',
+    color: '#f50057'
+};
+
 const QuoteMachine = ({ selectedQuote, assignNewQuoteIndex }) => (
-    <Card>
-        <CardContent>
+    <Card style={cardStyle}>
+        <Box 
+            display="block"
+            direction="row"
+            justify="center"
+            alignItems="center"
+        >
             <Typography id="text" style={quoteStyles}>
+                <FontAwesomeIcon 
+                    icon={faQuoteLeft} 
+                    style={quoteLeftStyle} 
+                    size="sm"
+                />
                 {selectedQuote.quote}<br />
-                -<span id="author">{selectedQuote.author}</span>
             </Typography>
-        </CardContent>
+            <Typography style={authorStyle}>
+                - <span id="author">{selectedQuote.author}</span>
+            </Typography>
+        </Box>
         <CardActions style={footerStyles}>
             <IconButton
                 style={iconStyle} 
@@ -60,7 +90,7 @@ const QuoteMachine = ({ selectedQuote, assignNewQuoteIndex }) => (
                 variant="contained"
                 color="secondary"
                 id="new-quote"
-                size="large" 
+                size="medium" 
                 onClick={assignNewQuoteIndex}>Next Quote
             </Button>
         </CardActions>
