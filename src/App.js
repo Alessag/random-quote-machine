@@ -62,7 +62,7 @@ class App extends Component {
     render(){
     return (
       <Grid className={this.props.classes.container}  id="quote-box" container justify="center">
-        <Grid xs={11} lg={8} item>
+        <Grid xs={11} lg={6} item>
           {
             this.selectedQuote ? <QuoteMachine  assignNewQuoteIndex={this.assignNewQuoteIndex} selectedQuote={this.selectedQuote} /> : null       
           }
