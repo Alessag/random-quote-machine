@@ -8,7 +8,7 @@ The machine generates random quotes with the authors and you can also share them
 
 install [node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-**2 -** Clone the project and install the dependencies:
+**2 -** Clone the project and install the dependencies
 
 ```sh
 $ git clone https://github.com/Alessag/random-quote-machine.git
